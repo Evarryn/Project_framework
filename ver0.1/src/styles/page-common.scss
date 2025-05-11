@@ -1,0 +1,72 @@
+// src/styles/page-common.scss
+
+// 此文件用于存放多个页面组件可能共享的通用布局样式。
+// 可以在需要这些样式的页面组件的 <style> 块中通过 @import '@/styles/page-common.scss'; 引入。
+
+// 示例：通用的页面容器样式 (HomePage.vue 和 AboutPage.vue 中有类似的结构)
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; // 默认页面内容居中对齐
+  padding: var(--spacing-lg) var(--spacing-md); // 上下使用较大间距，左右使用中等间距
+  box-sizing: border-box;
+  width: 100%;
+  min-height: calc(100vh - var(--global-header-height, 0px) - var(--global-footer-height, 0px)); // 减去可能的全局头部和底部高度
+                                                                                              // --global-header-height 等变量需要在variables.scss或App.vue中定义
+}
+
+.page-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  padding: 0 var(--spacing-md); // 给页头左右一些内边距
+
+  h1 {
+    font-size: var(--font-size-extra-large);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-color-primary); // 默认标题颜色
+    // 各个页面可以覆盖此颜色，如 AboutPage 中的 h1
+  }
+  // 如果有副标题或其他元素，也可以在这里定义通用样式
+}
+
+.page-content {
+  width: 100%;
+  max-width: var(--content-max-width, 960px); // 定义一个内容最大宽度变量，可在variables.scss中设置默认值
+  background-color: var(--fill-color-base);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow-light);
+  margin-bottom: var(--spacing-xl); // 与页脚的间距
+
+  // 通用的段落样式
+  p {
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-color-regular);
+  }
+  // 通用的列表样式
+  ul, ol {
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--spacing-md); // 给列表一些左内边距
+    li {
+        margin-bottom: var(--spacing-xs);
+    }
+  }
+}
+
+.page-footer {
+  width: 100%;
+  text-align: center;
+  padding: var(--spacing-md) 0;
+  color: var(--text-color-secondary);
+  font-size: var(--font-size-small);
+  // border-top: 1px solid var(--border-color-light); // 可选的页脚上边框
+}
+
+// 可以在 variables.scss 中添加如下变量的默认值：
+// :root {
+//   --global-header-height: 60px; /* 假设全局头部高度 */
+//   --global-footer-height: 40px; /* 假设全局底部高度 */
+//   --content-max-width: 960px;   /* 内容区域最大宽度 */
+// } 

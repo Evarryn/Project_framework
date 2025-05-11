@@ -1,0 +1,133 @@
+// src/styles/variables.scss
+
+// 这是一个非常重要的文件，用于定义全局的样式变量，确保风格统一。
+// 团队成员在编写组件样式时，应优先使用这些变量。
+
+// 1. 颜色规范 (Color Palette)
+// ==========================================================================
+:root {
+  // 主色调 (Primary Colors)
+  --primary-color: #409EFF; // 示例主色 - 亮蓝
+  --primary-color-light-1: #58a9ff;
+  --primary-color-dark-1: #308ee6;
+
+  // 辅助色 (Secondary Colors) - 用于点缀、强调、状态等
+  --success-color: #67C23A;  // 成功
+  --warning-color: #E6A23C;  // 警告
+  --danger-color: #F56C6C;   // 危险/错误
+  --info-color: #909399;     // 信息
+
+  // 中性色 (Neutral Colors) - 用于文本、背景、边框、分割线等
+  --text-color-primary: #303133;    // 主要文字
+  --text-color-regular: #606266;    // 常规文字
+  --text-color-secondary: #909399;  // 次要文字
+  --text-color-placeholder: #C0C4CC; // 占位文字
+  --text-color-disabled: #A8ABB2;   // 禁用文字
+  --text-color-anti: #FFFFFF;        // 反色文字 (用于深色背景)
+
+  --border-color-base: #DCDFE6;     // 基础边框
+  --border-color-light: #E4E7ED;
+  --border-color-lighter: #EBEEF5;
+  --border-color-extra-light: #F2F6FC;
+  --border-color-dark: #D4D7DE;
+  --border-color-darker: #CDD0D6;
+
+  --fill-color-base: #FFFFFF;       // 填充色 - 白
+  --fill-color-light: #F5F7FA;
+  --fill-color-lighter: #FAFAFA;
+  --fill-color-extra-light: #FAFCFF;
+  --fill-color-dark: #EBEEF5;
+  --fill-color-darker: #E6E8EB;
+  --fill-color-blank: #FFFFFF;      // 空白/透明填充
+
+  --background-color-base: #F5F7FA; // 页面/组件背景色
+  --background-color-overlay: rgba(0, 0, 0, 0.5); // 遮罩层背景
+
+  // 2. 字体规范 (Typography)
+  // ==========================================================================
+  --font-family-base: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  --font-family-code: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+
+  --font-size-extra-large: 20px;
+  --font-size-large: 18px;
+  --font-size-medium: 16px;
+  --font-size-base: 14px;       // 正文标准字号
+  --font-size-small: 13px;
+  --font-size-extra-small: 12px;
+
+  --font-weight-primary: 500;
+  --font-weight-secondary: 400; // Normal
+  --font-weight-bold: 700;      // Bold
+
+  --line-height-base: 1.5;      // 行高倍数
+  --line-height-compact: 1.2;
+
+  // 3. 边框与圆角 (Borders & Radius)
+  // ==========================================================================
+  --border-width-base: 1px;
+  --border-style-base: solid;
+  --border-base: var(--border-width-base) var(--border-style-base) var(--border-color-base);
+
+  --border-radius-base: 4px;
+  --border-radius-small: 2px;
+  --border-radius-large: 8px;
+  --border-radius-circle: 50%; // 用于圆形元素
+
+  // 4. 间距规范 (Spacing)
+  // ==========================================================================
+  // 基于 4px 或 8px 倍数原则，方便对齐和响应式调整
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;  // 基础间距
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+
+  // 5. 层级规范 (Z-index)
+  // ==========================================================================
+  --z-index-base: 1;
+  --z-index-tooltip: 10;
+  --z-index-dropdown: 1000;
+  --z-index-modal: 2000;
+  --z-index-message: 3000;
+
+  // 6. 阴影规范 (Shadows)
+  // ==========================================================================
+  --shadow-base: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04); // 基础阴影
+  --shadow-light: 0 2px 12px 0 rgba(0,0,0,0.1);                             // 用于卡片等
+  --shadow-dark: 0px 4px 10px rgba(0, 0, 0, 0.15);
+
+  // 7. 动画与过渡 (Animation & Transition)
+  // ==========================================================================
+  --transition-duration-base: 0.3s;
+  --transition-duration-fast: 0.15s;
+  --transition-timing-function-base: ease-in-out;
+
+  // 8. 美术素材路径 (Art Assets Paths)
+  // ==========================================================================
+  // 请将你们的美术素材放置在 src/assets/ 目录下，并在此处更新路径。
+  // 路径相对于 src 目录，Vite 会正确处理。
+  // 例如: --logo-url: url('@/assets/images/logo.png');
+  //       --default-avatar-url: url('@/assets/images/default-avatar.svg');
+
+  // 示例 (请根据实际情况替换)
+  --asset-logo-main: url('@/assets/logo-placeholder.svg');          // 主 Logo
+  --asset-favicon: url('@/assets/favicon-placeholder.ico');        // 网站图标
+  --asset-default-user-avatar: url('@/assets/avatar-placeholder.png'); // 默认用户头像
+  --asset-placeholder-image: url('@/assets/image-placeholder.jpg'); // 图片占位符
+
+  // 可以根据需要添加更多分类的素材变量，例如图标、背景图等
+  // --icon-search: url('@/assets/icons/search.svg');
+  // --background-login: url('@/assets/backgrounds/login-bg.jpg');
+}
+
+// 可以根据需要定义暗黑模式或其他主题的变量
+// 例如：
+/*
+body.dark-theme {
+  --primary-color: #2c3e50; // 暗黑主题下的主色
+  --text-color-primary: #bdc3c7; // 暗黑主题下的文字颜色
+  // ... 其他暗黑模式变量
+}
+*/ 

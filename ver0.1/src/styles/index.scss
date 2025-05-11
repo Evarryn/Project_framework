@@ -1,0 +1,194 @@
+// src/styles/index.scss
+
+// 引入 normalize.css 或 reset.css (可选，但推荐)
+// 目的是在不同浏览器之间提供更一致的默认样式。
+// 如果项目中没有 normalize.css，可以考虑添加它，或者使用一个简单的 reset。
+// import 'normalize.css'; // 如果已安装
+
+// 基础 Reset (一个非常简化的版本，可以根据需要扩展或替换为 normalize.css)
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit; // 继承父级字体样式
+  vertical-align: baseline;
+  box-sizing: border-box; // CSS盒模型统一为 border-box
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: var(--line-height-base); // 使用变量文件中定义的行高
+  -webkit-font-smoothing: antialiased; // 抗锯齿，使字体更平滑 (Chrome, Safari)
+  -moz-osx-font-smoothing: grayscale; // 抗锯齿 (Firefox)
+  font-family: var(--font-family-base); // 使用变量文件中定义的字体
+  color: var(--text-color-primary); // 使用变量文件中定义的文字颜色
+  background-color: var(--background-color-base); // 使用变量文件中定义的背景颜色
+}
+
+ol,
+ul {
+  list-style: none; // 去除列表的默认样式
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none; // 去除链接下划线
+  color: var(--primary-color); // 链接颜色使用主色
+  transition: color var(--transition-duration-fast) var(--transition-timing-function-base);
+
+  &:hover {
+    color: var(--primary-color-light-1);
+  }
+}
+
+img {
+  max-width: 100%; // 图片默认自适应宽度
+  height: auto;
+  vertical-align: middle; // 解决图片底部空隙问题
+}
+
+// 全局辅助类 (Utility Classes) - 可选，但有时很方便
+// ==========================================================================
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+// 更多全局样式可以在这里添加，例如滚动条样式、特定元素的统一样式等。
+
+// 引入 variables.scss (虽然已在 vite.config.js 中全局注入，但在此处显式导入有助于理解和维护)
+// 注意：由于已经在 vite.config.js 中通过 additionalData 引入，这里通常不需要再次 @import
+// 如果没有在 vite.config.js 中配置，则需要在这里取消注释下一行：
+// @import './variables.scss';
+
+// 可以在这里引入其他全局scss文件，例如 _reset.scss, _typography.scss 等
+// @import './_reset.scss'; // 如果你有一个单独的reset文件
+// @import './_typography.scss'; // 如果你有一个单独的排版文件
+
+
+// 最终，这个文件会被 main.js 引入，从而应用到整个项目中。 
